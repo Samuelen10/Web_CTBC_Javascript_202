@@ -103,3 +103,81 @@ else if (score >= 50){
 else{
     console.log("耶~~被當囉");
 }
+
+
+//練習題目 說明4
+
+let Hp =70;
+
+if(Hp <= 0 ){
+    console.log("死亡Dead");
+}
+else if (Hp <= 60){
+    console.log("警告");
+}
+else{
+    console.log("安全Safe");
+}
+
+
+let hpTest =59;
+// && 並且
+// 如果hpTest 小於等於100 並且 hpTest 大於等於60 就代表安全
+
+if (hpTest >= 60 && hpTest <= 100) {
+    console.log("安全Safe");
+}
+else if (hpTest <= 60 && hpTest > 0){
+    console.log("警告");
+}
+else{
+    console.log("死亡Dead");
+}
+
+console.log("%c迴圈", "color: gold");
+// for 迴圈
+// for 語法:
+// for (初始值;  條件; 迭代器) { 程式區塊 }
+for  (let index = 0; index < 10; index++) {
+    console.log("迴圈", index);
+    // alert("嗨 ~~")
+}
+
+
+// 變數
+let letCount = 1;
+letCount = 2;
+letCount = 3;
+// 常數 (不可變的數值)
+const constCount = 1;
+// constCount = 2;               // 產生錯誤，原因:常數不可改變
+
+// 不可重新定義
+// let letCount = 10;            // 產生錯誤，原因: 重複宣告
+// const constCount = 10;        // 產生錯誤，原因: 重複宣告
+
+// 常數命名習慣會使用全大寫並使用底線區隔
+const PI = 3.14;
+const WEB_FONT_SIZE = 24; //(用於定義不同的值)
+
+// 變數 var (variable)
+var varCount = 1;
+varCount = 123;     // 可重新賦予值
+var varCount = 3;   // 可重新定義 (不建議)
+console.log(varCount);
+
+// 作用域 Scope {}   // 代表程式作用的範圍(通常指大括號)
+// let 與 const 的作用域都在 {} 區塊內
+{
+    let letTest = 1;
+    const constTest = 1;
+    var varTest = 1;
+    console.log("let:", letTest);
+    console.log("const:", constTest);
+    console.log("var:", varTest);
+}
+
+//  console.log("let:", letTest);         // 錯誤 : 超出作用域
+//  console.log("const:", constTest);     // 錯誤 : 超出作用域
+console.log("var:", varTest);  // 在區塊外只有var可以正常使用
+
