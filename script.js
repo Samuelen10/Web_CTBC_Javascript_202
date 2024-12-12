@@ -143,7 +143,6 @@ for  (let index = 0; index < 10; index++) {
     // alert("嗨 ~~")
 }
 
-
 // 變數
 let letCount = 1;
 letCount = 2;
@@ -181,3 +180,15 @@ console.log(varCount);
 //  console.log("const:", constTest);     // 錯誤 : 超出作用域
 console.log("var:", varTest);  // 在區塊外只有var可以正常使用
 
+console.log("%cfunction 函式，方法或功能" , "color: gold");
+// 函式語法
+
+// function 函式名稱() { }
+function logLine() {
+    console.log("%c----我是分隔線----", "color: gold");
+}
+
+// 函式需要被呼叫: 函式名稱():
+logLine();
+logLine();
+logLine();
