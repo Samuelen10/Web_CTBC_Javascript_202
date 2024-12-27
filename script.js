@@ -192,3 +192,94 @@ function logLine() {
 logLine();
 logLine();
 logLine();
+logLine();
+logLine();
+
+//    2024/12/27 上課內容
+
+// 對照組 (比較不適合的寫法)
+function logLineRed() {
+    console.log("%c----我是分隔線----", "color: red");
+}
+
+function logLineGreen() {
+    console.log("%c----我是分隔線----", "color: green");
+}
+
+logLineRed();
+logLineGreen();
+
+// 程式要注意的事情: 思考未來的維護性 , 擴充性 , 可讀性
+
+// (比較適合的寫法)
+// function 函式名稱(參數) { }
+
+function logLineWithColor(color) {
+    console.log("%c----我是分隔線----", `color:  ${color}`);
+}
+
+logLineWithColor("blue");
+logLineWithColor("black");
+
+// 參數的預設值
+
+function logLongLineWithColor(color = "gold") {
+    console.log("%c-------我是分隔線------", `color:  ${color}`);
+}
+
+logLongLineWithColor("red");
+// 不給參數會直接使用預設值
+logLongLineWithColor();
+
+console.log("%c表達式函式", "color: gold");
+
+
+// 表達式函式語法
+// const 變數 = 函式 (參數) {}
+const print = function (color = "red") {
+    console.log("%c測試", `color:  ${color}`);
+}
+
+// 變數名稱 ( 參數 )
+print("green");
+print("gray");
+
+// 多個參數 
+const printMessage = function (color = "red" ,message = "這是預設文字") {
+    console.log(`%c${message}`, `color:  ${color}`);
+}
+
+printMessage();
+printMessage("gold");
+printMessage("gold", "訊息");
+
+// 想要使用預設顏色，文字要使用 "訊息"
+
+printMessage("訊息");                    // 錯誤
+printMessage(undefined, "訊息");         // 正確結果
+
+console.log("%c函式傳回值" , "color: gold");
+
+
+// 有傳回值的函式， 必須使用一個 return 關鍵字僵值傳回
+function double(number) {
+    return number * 2;
+}
+
+// 使用方式 1 : 用變數將傳回值儲存
+const result = double(10);
+console.log(result);
+// 使用方式 2 : 直接將傳回函式當作數值使用
+console.log(double(7));
+
+// 表達式傳回函式
+// 平方函式
+const square = function (number) {
+    return number * number;
+}
+
+console.log(square(8));
+console.log(square(225));
+
+// 練習題計算 BMI
+
