@@ -281,5 +281,31 @@ const square = function (number) {
 console.log(square(8));
 console.log(square(225));
 
-// 練習題計算 BMI
+// 提升 hosting
+// 在定義函式以前就能呼叫
+// 一般函式會提升
+console.log("一般函式:", Math.floor(bmi(60, 1.68)));
+// 表達函式與箭頭函式不會提升，不能在定義以前呼叫 (相對安全)
+// console.log("表達式函式:", Math.floor(bmiExpression(60, 1.68)));
+// console.log("箭頭函式:", Math.floor(bmiArrow(60, 1.68)));
 
+// 練習題計算 BMI
+// 一般函式:BMI
+function bmi(weight, height) {
+    return weight / square(height);
+}
+console.log(Math.floor(bmi(69, 1.75)));
+
+// 表達函式: BMI
+const bmiExpression = function(weight, height) {
+    return weight / square(height);
+}
+console.log(Math.floor(bmiExpression(69, 1.75)));
+console.log(Math.floor(bmiExpression(71, 1.75)));
+
+// 箭頭函式 =>
+const bmiArrow = (weight, height) =>{
+    return weight / square(height);
+}
+console.log(Math.floor(bmiArrow(70, 1.75)));
+console.log(Math.floor(bmiArrow(90, 1.78)));
